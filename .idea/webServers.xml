@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="5a880347-8213-47d2-b012-bf35ee6b5da5" name="almalinux9-sebuxor">
+        <fileTransfer rootFolder="/opt/F2B/" accessType="SFTP" host="51.222.159.236" port="60333" sshConfigId="a2c8bf37-bdc7-4854-a927-af26da79e1cb" sshConfig="sebuxor@51.222.159.236:60333 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
