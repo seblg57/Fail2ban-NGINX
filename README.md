@@ -37,11 +37,15 @@ Custom Scripts
 Our custom scripts serve multiple purposes:
 
 Ban/Unban IP Addresses: Interact directly with the system's firewall to dynamically manage the ban list.
+
+![Screenshot_670](https://github.com/seblg57/Fail2ban-NGINX/assets/56646434/802611a5-ecf8-45f3-9380-a45fa5d20d0e)
+
 Database Logging: Record details of each ban/unban action in a PostgreSQL database for audit and analysis.
 Notification System: Send alerts through email or other communication channels upon specific events.
 Database Structure
 The PostgreSQL database stores detailed information about each banned IP address, including country, city, ban reason, and timestamps.
 
+![Screenshot_671](https://github.com/seblg57/Fail2ban-NGINX/assets/56646434/b8c1386e-1b2b-41ba-87d5-0af54fc0b02d)
 
 Importance of the Database
 The database allows for:
@@ -57,6 +61,3 @@ We welcome contributions to this project! Please see CONTRIBUTING.md for how to 
 
 License
 This project is licensed under the MIT License - see the LICENSE file for details.
-
-
-![Screenshot_670](https://github.com/seblg57/Fail2ban-NGINX/assets/56646434/802611a5-ecf8-45f3-9380-a45fa5d20d0e)
