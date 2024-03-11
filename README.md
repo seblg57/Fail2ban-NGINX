@@ -1,8 +1,26 @@
+
+
 # Project Name: Fail2Ban Custom Integration
 
 ## Overview
 
 This project enhances security by utilizing custom scripts with Fail2Ban to dynamically ban/unban IP addresses based on log analysis, and incorporates a PostgreSQL database for detailed tracking and management of banned IPs.
+
+## Tested on :
+
+```ini
+NAME="AlmaLinux"
+VERSION="9.3 (Shamrock Pampas Cat)"
+ID="almalinux"
+ID_LIKE="rhel centos fedora"
+VERSION_ID="9.3"
+PLATFORM_ID="platform:el9"
+PRETTY_NAME="AlmaLinux 9.3 (Shamrock Pampas Cat)"
+ANSI_COLOR="0;34"
+LOGO="fedora-logo-icon"
+
+```
+
 
 ## How It Works
 
@@ -13,6 +31,9 @@ sudo yum install epel-release
 sudo yum install firewalld
 sudo systemctl start firewalld
 sudo systemctl enable firewalld
+sudo firewall-cmd --permanent --new-zone=blockzoneSSL
+sudo firewall-cmd --permanent --new-zone=blockzoneHTTP
+sudo firewall-cmd --reload
 sudo yum install fail2ban
 sudo systemctl start fail2ban
 sudo systemctl enable fail2ban
@@ -55,6 +76,38 @@ Analysis and Reporting: Facilitates the generation of reports and analytics on s
 Audit Compliance: Provides a record of security actions taken, aiding in compliance with security policies and regulations.
 Getting Started
 To get started with this project, clone the repository and follow the setup instructions in the INSTALL.md file.
+
+
+Database Configuration:
+
+### insert-ban.sql.sh
+
+The script starts by defining variables for the database name, username, password, and host.
+Information Retrieval via WHOIS:
+
+```ini
+It collects information about the banned IP address using the whois command.
+It extracts the country and city information from the WHOIS output using grep and awk commands.
+If the country or city information is not available, it defaults to "Unknown".
+Connection Type:
+
+It takes the connection type as an argument ($3) and stores it in the CONNECTION_TYPE variable.
+SQL Command Construction:
+
+It constructs an SQL command to insert the banned IP address along with the retrieved information and the provided jail name and connection type into the database table.
+Execution of SQL Command:
+
+It executes the SQL command using psql, providing the necessary credentials and executing the command within the specified database.
+```
+
+### firewallcmd-blockzoneHTTP.conf & firewallcmd-blockzoneSSL.conf
+
+[Definition]:
+```ini
+actionstart, actionstop, actioncheck: These parameters are set to true, indicating that the associated actions should be executed when Fail2Ban starts, stops, or checks its configuration, respectively.
+actionban: When Fail2Ban detects malicious activity and decides to ban an IP address, this action is triggered. It adds the banned IP address to the blockzoneHTTP firewall zone using firewall-cmd and reloads the firewall configuration. Additionally, it executes a script (insert-ban.sql.sh) to log the banned IP address and associated information into a database table for HTTP/SSH-related activities.
+actionunban: When Fail2Ban decides to unban an IP address, this action is triggered. It removes the unbanned IP address from the blockzoneHTTP firewall zone using firewall-cmd and reloads the firewall configuration. It also executes a script (delete_unban_SSH/HTTP.sh) to delete the unban record associated with the IP address from the database.
+```
 
 Contribution
 We welcome contributions to this project! Please see CONTRIBUTING.md for how to help improve this Fail2Ban integration.
