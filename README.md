@@ -1,4 +1,5 @@
 
+![Screenshot_672](https://github.com/seblg57/Fail2ban-NGINX/assets/56646434/80dd24f0-f41e-4b0b-9fc8-d00e9c904ac1)
 
 # Project Name: Fail2Ban Custom Integration
 
@@ -85,29 +86,29 @@ Database Configuration:
 The script starts by defining variables for the database name, username, password, and host.
 Information Retrieval via WHOIS:
 
-```ini
-It collects information about the banned IP address using the whois command.
-It extracts the country and city information from the WHOIS output using grep and awk commands.
-If the country or city information is not available, it defaults to "Unknown".
-Connection Type:
-
-It takes the connection type as an argument ($3) and stores it in the CONNECTION_TYPE variable.
-SQL Command Construction:
-
-It constructs an SQL command to insert the banned IP address along with the retrieved information and the provided jail name and connection type into the database table.
-Execution of SQL Command:
-
-It executes the SQL command using psql, providing the necessary credentials and executing the command within the specified database.
-```
+- It collects information about the banned IP address using the `whois` command.
+- It extracts the country and city information from the WHOIS output using `grep` and `awk` commands.
+- If the country or city information is not available, it defaults to "Unknown".
+- It takes the connection type as an argument (`$3`) and stores it in the `CONNECTION_TYPE` variable.
+- It constructs an SQL command to insert the banned IP address along with the retrieved information and the provided jail name and connection type into the database table.
+- It executes the SQL command using `psql`, providing the necessary credentials and executing the command within the specified database.
 
 ### firewallcmd-blockzoneHTTP.conf & firewallcmd-blockzoneSSL.conf
 
 [Definition]:
-```ini
-actionstart, actionstop, actioncheck: These parameters are set to true, indicating that the associated actions should be executed when Fail2Ban starts, stops, or checks its configuration, respectively.
-actionban: When Fail2Ban detects malicious activity and decides to ban an IP address, this action is triggered. It adds the banned IP address to the blockzoneHTTP firewall zone using firewall-cmd and reloads the firewall configuration. Additionally, it executes a script (insert-ban.sql.sh) to log the banned IP address and associated information into a database table for HTTP/SSH-related activities.
-actionunban: When Fail2Ban decides to unban an IP address, this action is triggered. It removes the unbanned IP address from the blockzoneHTTP firewall zone using firewall-cmd and reloads the firewall configuration. It also executes a script (delete_unban_SSH/HTTP.sh) to delete the unban record associated with the IP address from the database.
-```
+- **actionstart, actionstop, actioncheck**: 
+  - These parameters are set to `true`, indicating that the associated actions should be executed when Fail2Ban starts, stops, or checks its configuration, respectively.
+
+- **actionban**: 
+  - When Fail2Ban detects malicious activity and decides to ban an IP address, this action is triggered. 
+  - It adds the banned IP address to the `blockzoneHTTP` firewall zone using `firewall-cmd` and reloads the firewall configuration. 
+  - Additionally, it executes a script (`insert-ban.sql.sh`) to log the banned IP address and associated information into a database table for HTTP/SSH-related activities.
+
+- **actionunban**: 
+  - When Fail2Ban decides to unban an IP address, this action is triggered. 
+  - It removes the unbanned IP address from the `blockzoneHTTP` firewall zone using `firewall-cmd` and reloads the firewall configuration. 
+  - It also executes a script (`delete_unban_SSH/HTTP.sh`) to delete the unban record associated with the IP address from the database.
+
 
 Contribution
 We welcome contributions to this project! Please see CONTRIBUTING.md for how to help improve this Fail2Ban integration.
