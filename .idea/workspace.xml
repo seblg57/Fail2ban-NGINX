@@ -4,20 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2648ed8e-487f-4a7d-9e8a-f72580dacae6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/scripts/delete_unban_HTTP.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/delete_unban_SSH.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/insert-ban.sql.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="2648ed8e-487f-4a7d-9e8a-f72580dacae6" name="Changes" comment="v2">
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/createdb.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/action.d/firewallcmd-blockzoneHTTP.conf" beforeDir="false" afterPath="$PROJECT_DIR$/action.d/firewallcmd-blockzoneHTTP.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/action.d/firewallcmd-blockzoneSQL.conf" beforeDir="false" afterPath="$PROJECT_DIR$/fail2ban.conf_ORIG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/action.d/firewallcmd-blockzoneSSH.conf" beforeDir="false" afterPath="$PROJECT_DIR$/action.d/firewallcmd-blockzoneSSH.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/action.d/insert-ban.sql.sh" beforeDir="false" afterPath="$PROJECT_DIR$/jail.conf_ORIG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fail2ban.conf" beforeDir="false" afterPath="$PROJECT_DIR$/fail2ban.conf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jail.conf" beforeDir="false" afterPath="$PROJECT_DIR$/jail.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/read.ME" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/delete_unban_HTTP.sh" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/delete_unban_HTTP.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/delete_unban_SSH.sh" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/delete_unban_SSH.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/insert-ban.sql.sh" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/insert-ban.sql.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,8 +73,17 @@
       <updated>1709921913877</updated>
       <workItem from="1709921917492" duration="4526000" />
       <workItem from="1709995209875" duration="7288000" />
-      <workItem from="1710156275629" duration="4163000" />
+      <workItem from="1710156275629" duration="5814000" />
     </task>
+    <task id="LOCAL-00001" summary="v2">
+      <option name="closed" value="true" />
+      <created>1710163909073</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1710163909073</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -96,5 +99,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="v2" />
+    <option name="LAST_COMMIT_MESSAGE" value="v2" />
   </component>
 </project>

@@ -19,4 +19,4 @@ CONNECTION_TYPE=$3
 SQL_COMMAND="INSERT INTO ip_bans (ip_address, country, city, ban_time, jail, connection_type) VALUES ('$1', '$COUNTRY', '$CITY', now(), '$2', '$CONNECTION_TYPE');"
 
 # Exécute la commande SQL via psql
-PGPASSWORD=$DB_PASSWORD psql -U $DB_USER -d $DB_NAME -h $DB_HOST -c "$SQL_COMMAND"
+PGPASSWORD=$DB_PASSWORD psql -U $DB_USER -d $DB_NAME -c "$SQL_COMMAND"

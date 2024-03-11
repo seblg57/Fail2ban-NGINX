@@ -17,4 +17,4 @@ firewall-cmd --reload
 SQL_COMMAND="DELETE FROM ip_bans WHERE ip_address = '$IP';"
 
 # Exécute la commande SQL via psql
-PGPASSWORD=$DB_PASSWORD psql -U $DB_USER -d $DB_NAME -h $DB_HOST -c "$SQL_COMMAND"
+PGPASSWORD=$DB_PASSWORD psql -U $DB_USER -d $DB_NAME -c "$SQL_COMMAND"
