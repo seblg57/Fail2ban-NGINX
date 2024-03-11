@@ -5,7 +5,7 @@
 
 ## Overview
 
-This project enhances security by utilizing custom scripts with Fail2Ban to dynamically ban/unban IP addresses based on log analysis, and incorporates a PostgreSQL database for detailed tracking and management of banned IPs.
+This project enhances security by utilizing custom scripts with Fail2Ban to dynamically ban/unban IP addresses based on Nginx / SSH log analysis, and incorporates a PostgreSQL database for detailed tracking and management of banned IPs.
 
 ## Tested on :
 
@@ -21,8 +21,6 @@ ANSI_COLOR="0;34"
 LOGO="fedora-logo-icon"
 
 ```
-
-
 ## How It Works
 
 The process begins with Fail2Ban monitoring specified log files for suspicious activities. Upon detection, our custom scripts are triggered, performing actions such as banning the IP address, logging details to a PostgreSQL database, and optionally sending alerts.
