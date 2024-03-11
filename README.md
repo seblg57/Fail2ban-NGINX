@@ -8,11 +8,21 @@ This project enhances security by utilizing custom scripts with Fail2Ban to dyna
 
 The process begins with Fail2Ban monitoring specified log files for suspicious activities. Upon detection, our custom scripts are triggered, performing actions such as banning the IP address, logging details to a PostgreSQL database, and optionally sending alerts.
 
+```ini
+sudo yum install epel-release
+sudo yum install firewalld
+sudo systemctl start firewalld
+sudo systemctl enable firewalld
+sudo yum install fail2ban
+sudo systemctl start fail2ban
+sudo systemctl enable fail2ban
+
+```
 ## Configuration
 
 Fail2Ban is configured with several jails specific to the services being monitored (e.g., SSH, NGINX). Each jail is associated with custom action scripts that extend functionality beyond basic IP blocking.
 
-### Fail2Ban Jail Configuration
+### Fail2Ban Jail Configuration Example
 
 ```ini
 [sshd]
