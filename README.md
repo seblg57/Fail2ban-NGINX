@@ -1,5 +1,6 @@
 
-![Screenshot_672](https://github.com/seblg57/Fail2ban-NGINX/assets/56646434/80dd24f0-f41e-4b0b-9fc8-d00e9c904ac1)
+![sebux](https://github.com/seblg57/Fail2ban-NGINX/assets/56646434/afab38a7-90fa-4a08-ae06-07a4414e33c0)
+
 
 # Project Name: Fail2Ban Custom Integration
 
